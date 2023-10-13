@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:meetrip/screens/home_screen.dart';
+import 'package:meetrip/screens/jodh1_details.dart';
 
 import 'screens/splash_screen.dart';
 

@@ -6,8 +6,12 @@ class CutomButton extends StatelessWidget {
       required this.btnTxt,
       required this.bgColor,
       required this.txtColor,
-      required this.onPressed});
+      required this.onPressed,
+      this.height = 50,
+      this.width = 320});
   String btnTxt;
+  double height;
+  double width;
   final Color bgColor;
   final Color txtColor;
   final VoidCallback onPressed;
@@ -22,7 +26,7 @@ class CutomButton extends StatelessWidget {
                 RoundedRectangleBorder(borderRadius: BorderRadius.circular(10)),
             elevation: 15,
             backgroundColor: bgColor,
-            fixedSize: Size(320, 50)),
+            fixedSize: Size(width, height)),
         child: Text(
           btnTxt,
           style: TextStyle(fontSize: 18, fontWeight: FontWeight.bold),

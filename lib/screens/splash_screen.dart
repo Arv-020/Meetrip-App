@@ -30,33 +30,44 @@ class _SplashScreenState extends State<SplashScreen> {
       backgroundColor: Colors.teal.shade700,
       body: SafeArea(
         child: Column(
+          crossAxisAlignment: CrossAxisAlignment.center,
           mainAxisAlignment: MainAxisAlignment.spaceEvenly,
           children: [
-            SizedBox(
-              height: 120,
-              child: Stack(
-                alignment: Alignment.bottomCenter,
-                children: [
-                  TextLiquidFill(
-                    text: "MEETRIP",
-                    boxBackgroundColor: Colors.teal.shade700,
-                    waveColor: Colors.teal.shade100,
-                    textStyle: GoogleFonts.asapCondensed(
-                        fontSize: 25,
-                        fontWeight: FontWeight.bold,
-                        color: Colors.white),
-                    boxHeight: 100,
-                    loadDuration: const Duration(seconds: 4),
-                    waveDuration: const Duration(seconds: 4),
-                    loadUntil: 0.8,
-                  ),
-                  Positioned(
-                    top: 20,
-                    child: SizedBox(
-                        height: 40,
-                        child: Image.asset("assets/images/logo.png")),
-                  ),
-                ],
+            Padding(
+              padding:
+                  EdgeInsets.only(left: MediaQuery.sizeOf(context).width / 11),
+              child: Container(
+                // width: double.infinity,
+                color: Colors.grey,
+                child: Stack(
+                  // alignment: Alig,
+                  children: [
+                    Positioned(
+                      child: TextLiquidFill(
+                        text: "MEETRIP",
+                        boxBackgroundColor: Colors.teal.shade700,
+                        waveColor: Colors.teal.shade100,
+                        textStyle: GoogleFonts.asapCondensed(
+                          fontSize: 25,
+                          fontWeight: FontWeight.bold,
+                          color: Colors.white,
+                        ),
+                        // boxWidth: 200,
+                        boxHeight: 70,
+                        loadDuration: const Duration(seconds: 4),
+                        waveDuration: const Duration(seconds: 4),
+                        loadUntil: 0.8,
+                      ),
+                    ),
+                    Positioned(
+                      top: 10,
+                      left: MediaQuery.sizeOf(context).width / 4.5,
+                      child: SizedBox(
+                          height: 40,
+                          child: Image.asset("assets/images/logo.png")),
+                    ),
+                  ],
+                ),
               ),
             ),
             const SizedBox(

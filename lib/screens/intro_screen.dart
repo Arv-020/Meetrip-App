@@ -2,7 +2,8 @@ import 'package:animated_text_kit/animated_text_kit.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:meetrip/constants/constants.dart';
-import 'package:meetrip/screens/login_screen.dart';
+import 'package:meetrip/screens/home_screen.dart';
+import 'package:meetrip/screens/onboarding_screens.dart';
 import 'package:meetrip/widgets/custom_button.dart';
 import 'package:meetrip/widgets/intro_page.dart';
 
@@ -28,29 +29,33 @@ class _IntroScreenState extends State<IntroScreen>
           Padding(
             padding:
                 EdgeInsets.only(left: MediaQuery.sizeOf(context).width / 11),
-            child: Stack(
-              // alignment: Alig,
-              children: [
-                TextLiquidFill(
-                  text: "MEETRIP",
-                  boxBackgroundColor: Colors.white,
-                  waveColor: Colors.teal.shade100,
-                  textStyle: GoogleFonts.asapCondensed(
-                      fontSize: 25,
-                      fontWeight: FontWeight.bold,
-                      color: Colors.white),
-                  boxHeight: 100,
-                  loadDuration: const Duration(seconds: 4),
-                  waveDuration: const Duration(seconds: 4),
-                  loadUntil: 0.8,
-                ),
-                Positioned(
-                  top: 25,
-                  left: 85,
-                  child: SizedBox(
-                      height: 40, child: Image.asset("assets/images/logo.png")),
-                ),
-              ],
+            child: Container(
+              color: Colors.grey,
+              child: Stack(
+                // alignment: Alig,
+                children: [
+                  TextLiquidFill(
+                    text: "MEETRIP",
+                    boxBackgroundColor: Colors.white,
+                    waveColor: Colors.teal.shade100,
+                    textStyle: GoogleFonts.asapCondensed(
+                        fontSize: 25,
+                        fontWeight: FontWeight.bold,
+                        color: Colors.white),
+                    boxHeight: 100,
+                    loadDuration: const Duration(seconds: 4),
+                    waveDuration: const Duration(seconds: 4),
+                    loadUntil: 0.8,
+                  ),
+                  Positioned(
+                    top: 25,
+                    left: 85,
+                    child: SizedBox(
+                        height: 40,
+                        child: Image.asset("assets/images/logo.png")),
+                  ),
+                ],
+              ),
             ),
           ),
           SizedBox(
@@ -106,7 +111,12 @@ class _IntroScreenState extends State<IntroScreen>
                           duration: const Duration(milliseconds: 500),
                           curve: Curves.fastOutSlowIn);
                     }
-                  : () {},
+                  : () {
+                      Navigator.pushReplacement(
+                          context,
+                          MaterialPageRoute(
+                              builder: (context) => const HomeScreen()));
+                    },
               txtColor: Colors.white,
               btnTxt: vindex == 1 ? "Get Started" : "Continue",
               bgColor: Colors.teal),
